@@ -1,5 +1,3 @@
-<?php ?>
-
 <nav>
     <ul>
         <!-- <li><a href=""><i class="fa-solid fa-house"></i></a></li> -->
