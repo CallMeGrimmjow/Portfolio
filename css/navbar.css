@@ -54,6 +54,10 @@ li {
     margin: 0.25rem 1.125rem auto 1.125rem;
 }
 
+li.transi-underline{
+    background-color: transparent;
+}
+
 li a {
     text-decoration: none;
     position: relative;
