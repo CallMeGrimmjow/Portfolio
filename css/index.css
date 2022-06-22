@@ -1,0 +1,73 @@
+/*TYPEWRITER START*/
+h1 {
+    font-size: 4rem;
+    color: whitesmoke;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: max-content;
+    transform: translate(-50%, -50%);
+    padding-right: 0.12rem;
+}
+
+h1::before, h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+h1::before {
+    background-color: #232b2b;
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+h1::after {
+    width: 0.08em;
+    background-color: aqua;
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
+    blink 900ms steps(13) infinite;
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%
+    }
+}
+
+@keyframes blink {
+    to {
+        background-color: transparent;
+    }
+}
+
+#sub-title {
+    position: absolute;
+    font-size: 1.125rem;
+    top: 50%;
+    left: 35%;
+    transform: translateY(3rem);
+    opacity: 0;
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+}
+
+#sub-title a {
+    text-decoration: none;
+    color: aqua;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/*TYPEWRITER END*/
+
+#nav-index .transi-underline a {
+    opacity: 0;
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 3s) forwards;
+
+}
