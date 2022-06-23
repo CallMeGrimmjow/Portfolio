@@ -1,20 +1,58 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-require_once "../vendor/autoload.php";
+require_once "../PHPMailer/Exception.php";
+require_once "../PHPMailer/PHPMailer.php";
+require_once "../PHPMailer/SMTP.php";
+
+
 
 if (isset($_POST['submit'])) {
-    $email = new PHPMailer(true);
 
-    $emailAddress = [$_POST['email']];
-    $fullName = [$_POST['first-name'],$_POST['last-name'],];
+    $mail = new PHPMailer(true);
 
-    $email->From = "ezramosimann@gmail.com";
-    $email->FromName = "Ezra Mosimann";
+    // retrieve infos
+    $email = $_POST['email'];
+    $firstName = $_POST['first-name'];
+    $lastName = $_POST['last-name'];
+    $message = $_POST['message'];
 
-    $email->addAddress('ezra.mosimann@jobtek.ch', $fullName);
+
+
+    try {
+        // configuration
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER; // debug infos
+
+        // smtp config
+        $mail->isSMTP();
+        $mail->Host = "localhost";
+        $mail->Port = 1025;
+
+        //charset
+        $mail->CharSet = "utf-8";
+
+        // Receiver(s)
+        $mail->addAddress('ezramosimann@gmail.com');
+
+        // Sender
+        $mail->setFrom($email);
+
+        // content
+        $mail->isHTML(true);
+
+        $mail->Subject = $firstName . " " . $lastName . " sent you a message via your portfolio";
+        $mail->Body = $message;
+
+        // send the email
+        $mail->send();
+        echo "mail sent !";
+
+    } catch (Exception) {
+        echo "mail not sent. error:{$mail->ErrorInfo}";
+    }
+
 }
 ?>
 
@@ -54,7 +92,7 @@ if (isset($_POST['submit'])) {
 
 
     <label id="textarea" class="inputs" for="textarea">Tell me more:<br>
-        <textarea name="textarea" cols="35" rows="4"
+        <textarea name="message" cols="35" rows="4"
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate dolor veniam."></textarea>
     </label>
 

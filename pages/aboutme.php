@@ -18,19 +18,22 @@
 <?php require '../components/navbar.php'?>
 
 <section class="parent">
-    <div class="question first">
-        <h2>Who am I ?</h2>
+    <div id="about">
+        <h2>About Me</h2>
+    </div>
+    <div class="question first from-left">
+        <h3>Who am I ?</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem corporis deserunt eius odio.</p>
     </div>
 
-    <div class="question second">
-        <h2>What am I doing here ?</h2>
+    <div class="question second from-left">
+        <h3>What am I doing here ?</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem corporis deserunt eius odio.</p>
     </div>
 
-    <div class="question third">
-        <h2>My goals for the future</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem corporis deserunt eius odio.</p>
+    <div class="question third from-left">
+        <h3>My goals for the future</h3>
+        <p>Pretty simple... Improve! Discover! Try! Fail... <emoji></emoji> Try again !!!</p>
     </div>
 </section>
 </body>

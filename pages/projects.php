@@ -18,6 +18,7 @@
 
 <?php require '../components/navbar.php' ?>
 <div id="projects">
+    <!-- GLITCH EFFECT on h2 -->
     <h2>My projects</h2>
     <!-- --------------------------------------------------------------- -->
     <div class="project-content" id="project1">

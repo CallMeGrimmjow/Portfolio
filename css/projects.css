@@ -6,7 +6,6 @@
     margin: 0 8vw 4vw 8vw;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 a {
@@ -36,7 +35,6 @@ img {
 
 .project-content {
     border: 4px solid whitesmoke;
-    position: relative;
 }
 
 .project-content:hover {
