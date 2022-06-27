@@ -15,22 +15,33 @@
     <link rel="stylesheet" href="../css/aboutme.css">
 </head>
 <body>
-<?php require '../components/navbar.php'?>
+<?php require '../components/navbar.php' ?>
 
 <section class="parent">
+    <div id="about">
+        <h2>About Me</h2>
+    </div>
     <div class="question first">
-        <h2>Who am I ?</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem corporis deserunt eius odio.</p>
+        <h3>Who am I ?</h3>
+        <p>Hello ! my name is Ezra, I'm an 18yo apprentice developer who started this journey in IT on August 16, 2021,
+            it's been almost a year now and I am enjoying it so far. Other than that I enjoy playing league of legends,
+            reading and eating a good meal with my family!</p>
     </div>
 
     <div class="question second">
-        <h2>What am I doing here ?</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem corporis deserunt eius odio.</p>
+        <h3>What am I doing here ?</h3>
+        <p>I think it was already obvious but I'm going to say it anyway... a PORTFOLIO! whoaa. Gosh, it's so original,
+            isn't it...<br><br> isn't it <img src="../images/pleading_face.gif"
+                                      alt="failEmoji">?</p>
     </div>
 
     <div class="question third">
-        <h2>My goals for the future</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus autem corporis deserunt eius odio.</p>
+        <h3>My goals for the future</h3>
+        <p>Pretty simple... discover <img src="../images/face_with_monocle.gif" alt="discoverEmoji">, try
+            <img src="../images/writing_hand.gif" alt="tryEmoji">, <br> Fail...<img src="../images/pleading_face.gif"
+                                                                                    alt="failEmoji">, Try again
+            <img src="../images/writing_hand.gif" alt="tryEmoji">, Succeed <img src="../images/star_struck.gif"
+                                                                                alt="succedEmoji"></p>
     </div>
 </section>
 </body>

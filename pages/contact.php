@@ -1,20 +1,56 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-require_once "../vendor/autoload.php";
+require_once "../PHPMailer/Exception.php";
+require_once "../PHPMailer/PHPMailer.php";
+require_once "../PHPMailer/SMTP.php";
+
 
 if (isset($_POST['submit'])) {
-    $email = new PHPMailer(true);
 
-    $emailAddress = [$_POST['email']];
-    $fullName = [$_POST['first-name'],$_POST['last-name'],];
+    $mail = new PHPMailer(true);
 
-    $email->From = "ezramosimann@gmail.com";
-    $email->FromName = "Ezra Mosimann";
+    // retrieve infos
+    $email = $_POST['email'];
+    $firstName = $_POST['first-name'];
+    $lastName = $_POST['last-name'];
+    $message = $_POST['message'];
 
-    $email->addAddress('ezra.mosimann@jobtek.ch', $fullName);
+
+    try {
+        // configuration
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER; // debug infos
+
+        // smtp config
+        $mail->isSMTP();
+        $mail->Host = "localhost";
+        $mail->Port = 1025;
+
+        //charset
+        $mail->CharSet = "utf-8";
+
+        // Receiver(s)
+        $mail->addAddress('ezramosimann@gmail.com');
+
+        // Sender
+        $mail->setFrom($email);
+
+        // content
+        $mail->isHTML(true);
+
+        $mail->Subject = $firstName . " " . $lastName . " sent you a message via your portfolio";
+        $mail->Body = $message;
+
+        // send the email
+        $mail->send();
+        echo "mail sent !";
+
+    } catch (Exception) {
+        echo "mail not sent. error:{$mail->ErrorInfo}";
+    }
+
 }
 ?>
 
@@ -38,7 +74,7 @@ if (isset($_POST['submit'])) {
 <?php require '../components/navbar.php' ?>
 
 <form action="contact.php" method="post" id="form-contact">
-    <h2>Contact me: </h2>
+    <h2>Contact form: </h2>
     <label id="first-name" class="inputs" for="first-name">First name:<br>
         <input type="text" name="first-name" placeholder="John" required>
     </label>
@@ -54,11 +90,19 @@ if (isset($_POST['submit'])) {
 
 
     <label id="textarea" class="inputs" for="textarea">Tell me more:<br>
-        <textarea name="textarea" cols="35" rows="4"
+        <textarea name="message" cols="35" rows="4"
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate dolor veniam."></textarea>
     </label>
 
     <input class="inputs" id="submit" type="submit" name="submit" value="submit">
+    <!-- --------------------------------------------------------------------------------------------- -->
+
+    <div id="otherWays">
+        <h3>other ways: </h3>
+        <a href="https://github.com/CallMeGrimmjow" target="_blank"><i class="fa-brands fa-github fa-3x"></i></a>
+        <a href="mailto:ezramosimmann@gmail.com"><i class="fa-solid fa-envelope fa-3x"></i></a>
+        <!-- <a href="discordapp.com/users/Grimmjøw#6057"><i class="fa-brands fa-discord"></i></a> -->
+    </div>
 </form>
 </body>
 </html>
