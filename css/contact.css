@@ -68,3 +68,14 @@ input:focus,textarea:focus  {
     width: 100%;
     transition: 0.4s;
 }
+
+#otherWays {
+    grid-row-end: 3;
+    grid-column: 3/3;
+    justify-self: center;
+    align-self: center;
+}
+
+#otherWays > a > i:hover{
+    color: aqua;
+}
