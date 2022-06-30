@@ -1,96 +1,138 @@
-
 #projects {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     margin: 0 8vw 4vw 8vw;
     justify-content: center;
     align-items: center;
 }
 
-a {
-    text-decoration: none;
-}
-
 h2 {
-    grid-row: 1/1;
-    grid-column: 3/6;
+    grid-row: 1/2;
+    grid-column: 1/4;
     text-align: center;
 }
 
-h3 {
-    border-bottom: 2px solid whitesmoke;
+.card {
+    grid-row: 2/3;
+    grid-column: 1/4;
+    justify-self: center;
+    padding: 10rem 0 0;
+    max-width: 50ch;
+    border-radius: 0.25rem;
+    transition: transform 400ms ease;
 }
 
-p {
-    line-height: 3vh;
+.card:hover, .card:focus-within {
+    transform: scale(1.1);
 }
 
-img {
-    width: 16vw;
-    height: auto;
-    border-bottom: 2px solid whitesmoke;
+.card-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient(
+            hsl(0 0% 0% / 0),
+            hsla(0, 0%, 0%, 0.3) 20%,
+            hsl(0 0% 0% / 1));
+}
+
+.card-paragrpah, .card-title {
+    background-color: transparent;
+}
+
+.card-title {
+    position: relative;
+    width: max-content;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: calc(100% + var(--padding));
+    left: calc(var(--padding) * -1);
+    bottom: -0.2em;
+    background: aqua;
+    transform-origin: left;
+    transition: transform 400ms ease;
+}
+
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+    transform: scaleX(1);
+}
+
+.card-paragrpah {
+    margin: 0.9rem 1.1rem 0 1.1rem;
+    padding-bottom: 1.1rem;
+}
+
+@media (hover: hover) {
+    .card-content {
+        transform: translateY(65%);
+        transition: transform 300ms ease;
+    }
+
+    .card-content > *:not(.card-title) {
+        opacity: 0;
+    }
+
+    .card:hover .card-content, .card:focus-within .card-content {
+        transform: translateY(0);
+        transition: transform 300ms ease;
+        transition-delay: 500ms;
+    }
+
+    .card:focus-within .card-content {
+        transition-duration: 0ms;
+    }
+
+    .card:hover .card-content > *:not(.card-title),
+    .card:focus-within .card-content > *:not(.card-title) {
+        opacity: 1;
+    }
+
+    .card-title::after {
+        transform: scaleX(0);
+
+    }
+}
+
+.card-button {
+    margin: 1.125em;
+    cursor: pointer;
+    display: inline;
+    text-decoration: none;
+    padding: 0.5em 1.25em;
+    border-radius: 0.25em;
+    background-color: aqua;
+    color: gray;
+}
+
+.card-button > i {
+    background-color: transparent;
+    color: whitesmoke;
+}
+
+.card-button:hover > i, .card-button:focus > i {
+    color: black;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition-delay: 0ms !important;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+.one {
+    background-image: url(../images/crud.png);
+    background-size: cover;
     overflow: hidden;
 }
 
-.project-content {
-    border: 4px solid whitesmoke;
-}
-
-.project-content:hover {
-    border: 4px solid aqua;
-}
-
-.project-content:hover > a > h3 {
-    color: aqua;
-}
-
-/*-----------------------------------------------------------------------------------*/
-#project1 {
-    grid-row: 2/4;
-    grid-column-end: 2;
-}
-
-/*-----------------------------------------------------------------------------------*/
-#project2 {
-    grid-row: 2/4;
-    grid-column-end: 4;
-}
-
-/*-----------------------------------------------------------------------------------*/
-#project3 {
-    grid-row: 2/4;
-    grid-column-end: 6;
-}
-
-/*-----------------------------------------------------------------------------------*/
-#project4 {
-    grid-row: 2/4;
-    grid-column-end: 8;
-}
-
-/*-----------------------------------------------------------------------------------*/
-#project5 {
-    grid-row: 5/7;
-    grid-column-end: 2;
-}
-
-/*-----------------------------------------------------------------------------------*/
-#project6 {
-    grid-row: 5/7;
-    grid-column-end: 4;
-}
-
-/*-----------------------------------------------------------------------------------*/
-#project7 {
-    grid-row: 5/7;
-    grid-column-end: 6;
-}
-
-/*-----------------------------------------------------------------------------------*/
-#project8 {
-    grid-row: 5/7;
-    grid-column-end: 8;
-}
-
-/*-----------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------------------------ */

@@ -7,10 +7,7 @@ require_once "../PHPMailer/Exception.php";
 require_once "../PHPMailer/PHPMailer.php";
 require_once "../PHPMailer/SMTP.php";
 
-
-
 if (isset($_POST['submit'])) {
-
     $mail = new PHPMailer(true);
 
     // retrieve infos
@@ -19,40 +16,30 @@ if (isset($_POST['submit'])) {
     $lastName = $_POST['last-name'];
     $message = $_POST['message'];
 
+    // configuration
+    /*$mail->SMTPDebug = SMTP::DEBUG_SERVER;*/ // debug infos
+    $mail->isSMTP();
+    $mail->SMTPDebug = 2;
+    $mail->Host = "mail.ezramosimann.dev";
+    $mail->Port = 465;
+    $mail->Username = 'ezramosimann@ezramosimann.dev';
+    $mail->Password = 'mail pwd';
+    $mail->CharSet = "utf-8";
 
+    // Sender
+    $mail->setFrom($email, 'Sender');
+    // Receiver(s)
+    $mail->addAddress('ezra@ezramosimann.dev', 'Receiver');
 
-    try {
-        // configuration
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER; // debug infos
+    // content
+    $mail->isHTML(true);
+    $mail->Subject = $firstName . " " . $lastName . " sent you a message";
+    $mail->Body = $message;
 
-        // smtp config
-        $mail->isSMTP();
-        $mail->Host = "localhost";
-        $mail->Port = 1025;
-
-        //charset
-        $mail->CharSet = "utf-8";
-
-        // Receiver(s)
-        $mail->addAddress('ezramosimann@gmail.com');
-
-        // Sender
-        $mail->setFrom($email);
-
-        // content
-        $mail->isHTML(true);
-
-        $mail->Subject = $firstName . " " . $lastName . " sent you a message via your portfolio";
-        $mail->Body = $message;
-
-        // send the email
-        $mail->send();
-        echo "mail sent !";
-
-    } catch (Exception) {
-        echo "mail not sent. error:{$mail->ErrorInfo}";
-    }
-
+    // send the email
+    if (!$mail->send()) {
+        echo "PHPMailer Error: " . $mail->ErrorInfo;
+    } echo "mail sent !";
 }
 ?>
 
@@ -70,17 +57,17 @@ if (isset($_POST['submit'])) {
           rel="stylesheet">
     <script src="https://kit.fontawesome.com/05fd7434d7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
 <?php require '../components/navbar.php' ?>
 
 <form action="contact.php" method="post" id="form-contact">
-    <h2>Contact me: </h2>
+    <h2>Contact form: </h2>
     <label id="first-name" class="inputs" for="first-name">First name:<br>
         <input type="text" name="first-name" placeholder="John" required>
     </label>
-
 
     <label id="last-name" class="inputs" for="last-name">Last name:<br>
         <input type="text" name="last-name" placeholder="Doe" required>
@@ -90,13 +77,20 @@ if (isset($_POST['submit'])) {
         <input type="email" name="email" placeholder="racoon@city.com" required>
     </label>
 
-
     <label id="textarea" class="inputs" for="textarea">Tell me more:<br>
         <textarea name="message" cols="35" rows="4"
-                  placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut cupiditate dolor veniam."></textarea>
+                  placeholder="Lorem ipsum dolor sit amet aut, consectetur adipisicing elit dolor cupiditate veniam."></textarea>
     </label>
 
     <input class="inputs" id="submit" type="submit" name="submit" value="submit">
+    <!-- --------------------------------------------------------------------------------------------- -->
+    <div id="otherWays">
+        <h3>other ways: </h3>
+        <!-- flip effect -->
+        <a href="https://github.com/CallMeGrimmjow" target="_blank"><i class="fa-brands fa-github fa-3x"></i></a>
+        <a href="mailto:ezramosimann@ezramosimann.dev"><i class="fa-solid fa-envelope fa-3x"></i></a>
+    </div>
 </form>
+<?php require_once '../components/footer.php' ?>
 </body>
 </html>

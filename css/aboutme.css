@@ -3,19 +3,36 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     row-gap: 2vw;
+    column-gap: 2vw;
     margin: 4vw 4vw;
 }
 
 .question {
     border-left: whitesmoke 2px solid;
+    animation: bottomToTop 2s ease-out forwards;
+}
+
+@keyframes bottomToTop {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+
+
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-2.1rem);
+    }
 }
 
 #about {
     grid-column: 2/3;
     grid-row: 1/2;
     justify-self: center;
-    align-self: center;
+    align-self: start;
 }
+
+
 
 .first {
     grid-column: 1 / 2;
@@ -32,16 +49,22 @@
     grid-row: 4 / 4;
 }
 
-
 h3, p {
-    opacity: 0;
-    transform: translateX(0rem);
-    animation: fadeFromLeft 4s ease-out forwards;
+    animation: fadeFromLeft 2.5s ease-out forwards;
 }
 
 @keyframes fadeFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(0rem);
+    }
     to {
         opacity: 1;
         transform: translateX(1.25em);
     }
+}
+
+.emoji {
+    width: 32px;
+    height: auto;
 }

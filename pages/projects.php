@@ -12,6 +12,7 @@
           rel="stylesheet">
     <script src="https://kit.fontawesome.com/05fd7434d7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/projects.css">
 </head>
 <body>
@@ -20,113 +21,17 @@
 <div id="projects">
     <!-- GLITCH EFFECT on h2 -->
     <h2>My projects</h2>
-    <!-- --------------------------------------------------------------- -->
-    <div class="project-content" id="project1">
-        <a target="_blank" href="#">
-            <img src="../images/Screenshot_pp.png" alt="img_project1">
-            <h3>EXAMPLE 01</h3>
-            <div class="expendable-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta enim error illo impedit incidunt
-                    laborum
-                    maxime minima minus nam optio quidem repellendus rerum, saepe, sit totam vel voluptas voluptatem
-                    voluptatum?</p>
-            </div>
-        </a>
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
+    <div class="card one">
+        <div class="card-content">
+            <h3 class="card-title">CRUD en PHP</h3>
+            <p class="card-paragrpah">A CRUD I did during my initiation to PHP and SQL.</p>
+            <a href="https://github.com/CallMeGrimmjow/CRUD_PHP" class="card-button" target="_blank">
+                <i class="fa-brands fa-github fa-lg"></i></a>
+        </div>
     </div>
-    <!-- --------------------------------------------------------------- -->
-    <div class="project-content" id="project2">
-        <a target="_blank" href="#">
-            <img src="../images/Screenshot_pp.png" alt="img_project1">
-            <h3>EXAMPLE 02</h3>
-            <div class="expendable-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta enim error illo impedit incidunt
-                    laborum
-                    maxime minima minus nam optio quidem repellendus rerum, saepe, sit totam vel voluptas voluptatem
-                    voluptatum?</p>
-            </div>
-        </a>
-    </div>
-    <!-- --------------------------------------------------------------- -->
-    <div class="project-content" id="project3">
-        <a target="_blank" href="#">
-            <img src="../images/Screenshot_pp.png" alt="img_project1">
-            <h3>EXAMPLE 03</h3>
-            <div class="expendable-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta enim error illo impedit incidunt
-                    laborum
-                    maxime minima minus nam optio quidem repellendus rerum, saepe, sit totam vel voluptas voluptatem
-                    voluptatum?</p>
-            </div>
-        </a>
-    </div>
-    <!-- --------------------------------------------------------------- -->
-    <div class="project-content" id="project4">
-        <a target="_blank" href="#">
-            <img src="../images/Screenshot_pp.png" alt="img_project1">
-            <h3>EXAMPLE 04</h3>
-            <div class="expendable-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta enim error illo impedit incidunt
-                    laborum
-                    maxime minima minus nam optio quidem repellendus rerum, saepe, sit totam vel voluptas voluptatem
-                    voluptatum?</p>
-            </div>
-        </a>
-    </div>
-    <!-- --------------------------------------------------------------- -->
-    <div class="project-content" id="project5">
-        <a target="_blank" href="#">
-            <img src="../images/Screenshot_pp.png" alt="img_project1">
-            <h3>EXAMPLE 05</h3>
-            <div class="expendable-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta enim error illo impedit incidunt
-                    laborum
-                    maxime minima minus nam optio quidem repellendus rerum, saepe, sit totam vel voluptas voluptatem
-                    voluptatum?</p>
-            </div>
-        </a>
-    </div>
-    <!-- --------------------------------------------------------------- -->
-    <div class="project-content" id="project6">
-        <a target="_blank" href="#">
-            <img src="../images/Screenshot_pp.png" alt="img_project1">
-            <h3>EXAMPLE 06</h3>
-            <div class="expendable-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta enim error illo impedit incidunt
-                    laborum
-                    maxime minima minus nam optio quidem repellendus rerum, saepe, sit totam vel voluptas voluptatem
-                    voluptatum?</p>
-            </div>
-        </a>
-    </div>
-    <!-- --------------------------------------------------------------- -->
-    <div class="project-content" id="project7">
-        <a target="_blank" href="#">
-            <img src="../images/Screenshot_pp.png" alt="img_project1">
-            <h3>EXAMPLE 07</h3>
-            <div class="expendable-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta enim error illo impedit incidunt
-                    laborum
-                    maxime minima minus nam optio quidem repellendus rerum, saepe, sit totam vel voluptas voluptatem
-                    voluptatum?</p>
-            </div>
-        </a>
-    </div>
-    <!-- --------------------------------------------------------------- -->
-    <div class="project-content" id="project8">
-        <a target="_blank" href="#">
-            <img src="../images/Screenshot_pp.png" alt="img_project1">
-            <h3>EXAMPLE 08</h3>
-            <div class="expendable-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta enim error illo impedit incidunt
-                    laborum
-                    maxime minima minus nam optio quidem repellendus rerum, saepe, sit totam vel voluptas voluptatem
-                    voluptatum?</p>
-            </div>
-        </a>
-    </div>
-    <!-- --------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------------------------------------------------- -->
 </div>
-<script src="../js/functions.js"></script>
+<?php require_once '../components/footer.php' ?>
 </body>
 </html>
-
