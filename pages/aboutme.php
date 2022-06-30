@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap"
           rel="stylesheet">
     <script src="https://kit.fontawesome.com/05fd7434d7.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/aboutme.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
 <?php require '../components/navbar.php' ?>
@@ -30,19 +31,20 @@
 
     <div class="question second">
         <h3>What am I doing here ?</h3>
-        <p>I think it was already obvious but I'm going to say it anyway... a PORTFOLIO! whoaa. Gosh, it's so original,
-            isn't it...<br><br> isn't it <img src="../images/pleading_face.gif"
+        <p>I think it was already obvious but I'm going to say it anyway... a PORTFOLIO!<br> Gosh, it's so original,
+            isn't it...<br><br> isn't it <img class="emoji" src="../images/pleading_face.gif"
                                       alt="failEmoji">?</p>
     </div>
 
     <div class="question third">
         <h3>My goals for the future</h3>
-        <p>Pretty simple... discover <img src="../images/face_with_monocle.gif" alt="discoverEmoji">, try
-            <img src="../images/writing_hand.gif" alt="tryEmoji">, <br> Fail...<img src="../images/pleading_face.gif"
+        <p>Pretty simple... discover <img class="emoji" src="../images/face_with_monocle.gif" alt="discoverEmoji">, try
+            <img class="emoji" src="../images/writing_hand.gif" alt="tryEmoji">, <br> Fail...<img class="emoji" src="../images/pleading_face.gif"
                                                                                     alt="failEmoji">, Try again
-            <img src="../images/writing_hand.gif" alt="tryEmoji">, Succeed <img src="../images/star_struck.gif"
+            <img class="emoji" src="../images/writing_hand.gif" alt="tryEmoji">, Succeed <img class="emoji" src="../images/star_struck.gif"
                                                                                 alt="succedEmoji"></p>
     </div>
 </section>
+<?php require_once '../components/footer.php'?>
 </body>
 </html>

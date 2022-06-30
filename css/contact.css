@@ -4,7 +4,7 @@
     grid-template-rows: repeat(4, 1fr) 2fr 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-row-gap: 3rem;
-    margin: 4vw 3vw;
+    margin: 0 3vw;
 
 }
 
@@ -40,6 +40,7 @@ h2 {
 }
 
 #submit {
+    z-index: 1;
     grid-row-end: 7;
     grid-column: 2/2;
     width: 5em;
@@ -51,20 +52,22 @@ h2 {
 #submit:hover {
     color: aqua;
     border: aqua solid 3px;
-    box-shadow: rgba(0, 255, 255, 0.5) 0 19px 38px, rgba(0, 255, 255, 0.33) 0 15px 12px;
+    box-shadow: rgba(0, 255, 255, 0.5) 0 19px 38px,
+                rgba(0, 255, 255, 0.33) 0 15px 12px;
 }
 
-input, textarea{
+input, textarea {
     box-sizing: border-box;
     border: none;
     outline: none;
     padding: 0.45em 0;
-    border-bottom: 1px solid  #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
-input:focus,textarea:focus  {
+input:focus, textarea:focus {
     border-bottom: aqua solid 2px;
-    box-shadow: rgba(0, 255, 255, 0.5) 0 19px 38px, rgba(0, 255, 255, 0.22) 0 15px 12px;
+    box-shadow: rgba(0, 255, 255, 0.5) 0 19px 38px,
+                rgba(0, 255, 255, 0.22) 0 15px 12px;
     width: 100%;
     transition: 0.4s;
 }
@@ -76,6 +79,6 @@ input:focus,textarea:focus  {
     align-self: center;
 }
 
-#otherWays > a > i:hover{
+#otherWays > a > i:hover {
     color: aqua;
 }
